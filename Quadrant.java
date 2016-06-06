@@ -16,7 +16,8 @@ class Quadrant extends JPanel{
 	public Quadrant(){
 		// set dimensions
 		Dimension size = getPreferredSize();
-		size.width= 700;
+		size.width = 700;
+		size.height = 700;
 		setPreferredSize(size);
 
 		// set layout manager
@@ -33,25 +34,8 @@ class Quadrant extends JPanel{
 
 	// method to build GUI
 	private void buildGUI(){
-		//quadArea();
 		createQuad();		
 	} // end of buildGUI() method
-
-	// method to create panel for quadrants to be placed
-/*	private void quadArea(){
-		JPanel qArea = new JPanel();
-		qArea.setLayout(new GridLayout(2,2));
-
-		// constraints for layout
-		GridBagConstraints qAreaC = new GridBagConstraints();
-		qAreaC.gridx = 10;
-		qAreaC.gridy = 8;
-		qAreaC.weightx = 0;
-		qAreaC.weighty = 0;
-		
-		add(qArea, qAreaC);
-	} // end of quadArea() method
-	*/
 
 	// method to create quadrant tiles in GUI	
 	private void createQuad(){
@@ -62,7 +46,8 @@ class Quadrant extends JPanel{
 		final Color ORANGE = new Color(255,204,128);
 
 		int count;
-
+		
+		// array of JTextAreas
 		JTextArea qArray[] = new JTextArea[4];
 		
 		for(count = 0; count < 4; count++){
@@ -84,8 +69,9 @@ class Quadrant extends JPanel{
 			} // end of switch
 
 			qArray[count].setWrapStyleWord(true);
+			qArray[count].setLineWrap(true);
 
-			add(qArray[count]);
+			add(new JScrollPane(qArray[count]));
 		} // end of for loop
-	 } // end of createQuad() method
+	} // end of createQuad() method
 }

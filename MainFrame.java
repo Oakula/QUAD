@@ -8,12 +8,12 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class MainFrame extends JFrame {
+class MainFrame extends JFrame {
 	
 	// ----- CONSTRUCTOR -----
 	public MainFrame(){
 		super("QUAD");		
-		setMinimumSize(new Dimension(700, 450));
+		setMinimumSize(new Dimension(700, 700));
 		setResizable(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -29,8 +29,8 @@ public class MainFrame extends JFrame {
 		GridBagConstraints quadC = new GridBagConstraints();
 		quadC.gridx = 10;
         quadC.gridy = 8;
-        quadC.weightx = 0;
-        quadC.weighty = 0;
+       	quadC.weightx = 0;
+		quadC.weighty = 0;
 
 		add(quad, quadC);
 	} // end of main() method
