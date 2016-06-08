@@ -1,6 +1,6 @@
-/*	
+/*
 	ClassName: quadrants
-	Author: Callum Warrilow	
+	Author: Callum Warrilow
 	Desc: The view class for the quadrant panels of QUAD app
 */
 
@@ -12,7 +12,7 @@ import java.awt.Insets;
 import javax.swing.BorderFactory;
 
 class Quadrant extends JPanel{
-	
+
 	// ----- CONSTRUCTOR -----
 	public Quadrant(){
 		// set dimensions
@@ -25,47 +25,43 @@ class Quadrant extends JPanel{
 		setLayout(new GridLayout(2,2,10,10));
 
 		// add components and make visible
-		buildGUI();
+		createQuad();
 		setVisible(true);
-	 } // end of CONSTRUCTOR
+	} // end of CONSTRUCTOR
 
-	 // ----- METHODS -----
-	 //
-	 // -------------------
+	// ----- METHODS -----
+	//
+	// -------------------
 
-	// method to build GUI
-	private void buildGUI(){
-		createQuad();		
-	} // end of buildGUI() method
-
-	// method to create quadrant tiles in GUI	
+	// method to create quadrant tiles in GUI
 	private void createQuad(){
 		// color declaration for quadrant backgrounds
-		final Color RED = new Color(239,154,154);	
+		final Color RED = new Color(239,154,154);
 		final Color BLUE = new Color(144,202,249);
 		final Color GREEN = new Color(165,214,167);
 		final Color ORANGE = new Color(255,204,128);
 
 		int count;
-		
+
 		// array of JTextAreas
 		JTextArea qArray[] = new JTextArea[4];
-		
+
+		// for loop to create and format each quadrant
 		for(count = 0; count < 4; count++){
-			qArray[count] = new JTextArea("Text Here",10,15);	
-		
+			qArray[count] = new JTextArea("Text Here",10,15);
+
 			switch(count){
 				case 0:
 					qArray[count].setBackground(RED);
 				break;
 				case 1:
-					qArray[count].setBackground(BLUE);	
+					qArray[count].setBackground(BLUE);
 				break;
 				case 2:
-					qArray[count].setBackground(GREEN);	
+					qArray[count].setBackground(GREEN);
 				break;
 				case 4:
-					qArray[count].setBackground(ORANGE);	
+					qArray[count].setBackground(ORANGE);
 				break;
 			} // end of switch
 
