@@ -7,8 +7,9 @@
 // ----- IMPORT STATEMENTS -----
 import java.awt.*;
 import javax.swing.*;
-import java.awt.GridBagLayout;
-
+import java.awt.GridLayout;
+import java.awt.Insets;
+import javax.swing.BorderFactory;
 
 class Quadrant extends JPanel{
 	
@@ -21,7 +22,7 @@ class Quadrant extends JPanel{
 		setPreferredSize(size);
 
 		// set layout manager
-		setLayout(new GridLayout(2,2));
+		setLayout(new GridLayout(2,2,10,10));
 
 		// add components and make visible
 		buildGUI();
@@ -68,8 +69,12 @@ class Quadrant extends JPanel{
 				break;
 			} // end of switch
 
+			// setting words to wrap
 			qArray[count].setWrapStyleWord(true);
 			qArray[count].setLineWrap(true);
+
+			// setting margins
+			qArray[count].setMargin(new Insets(10,10,10,10));
 
 			add(new JScrollPane(qArray[count]));
 		} // end of for loop
