@@ -9,7 +9,6 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.GridLayout;
 import java.awt.Insets;
-import javax.swing.BorderFactory;
 
 class Quadrant extends JPanel{
 

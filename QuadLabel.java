@@ -8,25 +8,29 @@
 // ----- IMPORT STATEMENTS -----
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.BorderFactory;
 
 class QuadLabel extends JPanel {
 	// ----- CONSTRUCTOR -----
 	public QuadLabel(String title1, String title2, boolean vertical){
 		Dimension size = getPreferredSize();
-		size.width = 300;
-		size.height = 20;
-		setPreferredSize(size);
 
 		// set layout manager
 		if(vertical == true){
-			setLayout(new GridLayout(1,1,10,10));
+			size.width = 50;
+			size.height = 400;
+			setLayout(new GridLayout(2,1,30,30));
 		}else{
-			setLayout(new GridLayout(2,0,10,10));
+			size.width = 400;
+			size.height = 50;
+			setLayout(new GridLayout(1,2,30,30));
 		} // end of if statement
 
+		setPreferredSize(size);
+
 		// add titles to labels
-		setTitle(title1);
-		setTitle(title2);
+		setTitle(title1, vertical);
+		setTitle(title2, vertical);
 
 		setVisible(true);
 	} // end of CONSTRUCTOR
@@ -36,8 +40,14 @@ class QuadLabel extends JPanel {
 	// -------------------
 
 	// ---- method to set title to a JLabel
-	private void setTitle(String quadTitle){
+	private void setTitle(String quadTitle, boolean rotate){
 		JLabel quadLabel = new JLabel(quadTitle);
+		if(rotate == true){
+			quadLabel.setBorder(BorderFactory.createEmptyBorder(30, 30, 0, 0));
+			quadLabel.setUI(new VerticalLabelUI(true));
+		}else{
+			quadLabel.setBorder(BorderFactory.createEmptyBorder(0, 60, 0, 0));
+		}
 
 		add(quadLabel);
 	} // end of setTitle1() method
