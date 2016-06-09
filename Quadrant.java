@@ -17,8 +17,8 @@ class Quadrant extends JPanel{
 	public Quadrant(){
 		// set dimensions
 		Dimension size = getPreferredSize();
-		size.width = 500;
-		size.height = 500;
+		size.width = 400;
+		size.height = 400;
 		setPreferredSize(size);
 
 		// set layout manager
