@@ -59,7 +59,7 @@ class Quadrant extends JPanel{
 				case 2:
 					qArray[count].setBackground(GREEN);
 				break;
-				case 4:
+				case 3:
 					qArray[count].setBackground(ORANGE);
 				break;
 			} // end of switch

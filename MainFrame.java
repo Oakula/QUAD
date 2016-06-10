@@ -13,7 +13,7 @@ class MainFrame extends JFrame {
 	// ----- CONSTRUCTOR -----
 	public MainFrame(){
 		super("QUAD");
-		setMinimumSize(new Dimension(700,700));
+		setMinimumSize(new Dimension(500,500));
 		setResizable(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -35,7 +35,7 @@ class MainFrame extends JFrame {
 		add(quad, quadC);
 
 		QuadLabel hLabel = new QuadLabel("URGENT", "NOT URGENT", false);
-		QuadLabel vLabel = new QuadLabel("NOT IMPORTANT", "IMPORTANT", true);
+		QuadLabel vLabel = new QuadLabel("IMPORTANT", "NOT IMPORTANT", true);
 
 		GridBagConstraints hLabelC = new GridBagConstraints();
 		hLabelC.gridx = 10;
