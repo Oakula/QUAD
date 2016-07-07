@@ -23,6 +23,8 @@ class MainFrame extends JFrame {
 		setVisible(true);
 	} // end of CONSTRUCTOR
 
+	// ---- method that creates objects of each component of the and positions
+	// it into a grid shape
 	private void buildGUI(){
 		Quadrant quad = new Quadrant();
 

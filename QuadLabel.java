@@ -42,12 +42,14 @@ class QuadLabel extends JPanel {
 	// ---- method to set title to a JLabel
 	private void setTitle(String quadTitle, boolean rotate){
 		JLabel quadLabel = new JLabel(quadTitle);
+
+		// decides if text needs displaying vertically
 		if(rotate == true){
 			quadLabel.setBorder(BorderFactory.createEmptyBorder(30, 30, 0, 0));
 			quadLabel.setUI(new VerticalLabelUI(true));
 		}else{
 			quadLabel.setBorder(BorderFactory.createEmptyBorder(0, 60, 0, 0));
-		}
+		} // end of if statement
 
 		add(quadLabel);
 	} // end of setTitle1() method
