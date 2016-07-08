@@ -6,8 +6,10 @@
 */
 
 // ----- IMPORT STATEMENTS -----
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 
 class QuadLabel extends JPanel {

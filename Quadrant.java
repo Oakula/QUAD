@@ -5,10 +5,13 @@
 */
 
 // ----- IMPORT STATEMENTS -----
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Color;
 import java.awt.Insets;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 
 class Quadrant extends JPanel{
 
