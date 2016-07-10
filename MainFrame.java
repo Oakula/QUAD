@@ -29,11 +29,17 @@ class MainFrame extends JFrame {
 		setVisible(true);
 	} // end of CONSTRUCTOR
 
-	// ---- method that creates objects of each component of the and positions
-	// it into a grid shape
+	/* ---- method that creates objects of each component of the and positions
+	it into a grid shape */
 	private void buildGUI(){
+		// adding the TopMenu
+		TopMenu topMenu = new TopMenu();
+		setJMenuBar(topMenu);
+
+		// add new set of quadrants
 		Quadrant quad = new Quadrant();
 
+		// set quadrants out in centre of JFrame
 		GridBagConstraints quadC = new GridBagConstraints();
 		quadC.gridx = 10;
 		quadC.gridy = 8;
@@ -42,9 +48,11 @@ class MainFrame extends JFrame {
 
 		add(quad, quadC);
 
+		// instantiate new QuadLabels for the quadrants
 		QuadLabel hLabel = new QuadLabel("URGENT", "NOT URGENT", false);
 		QuadLabel vLabel = new QuadLabel("IMPORTANT", "NOT IMPORTANT", true);
 
+		// align QuadLabels with Quadrants
 		GridBagConstraints hLabelC = new GridBagConstraints();
 		hLabelC.gridx = 10;
 		hLabelC.gridy = 7;
@@ -55,7 +63,7 @@ class MainFrame extends JFrame {
 
 		add(hLabel, hLabelC);
 		add(vLabel, vLabelC);
-	} // end of main() method
+	} // end of buildGUI() method
 
 	// ---- method to style GUI based around the OS
     private void styleGUI(){
