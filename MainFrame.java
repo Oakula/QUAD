@@ -33,7 +33,7 @@ class MainFrame extends JFrame {
 	it into a grid shape */
 	private void buildGUI(){
 		// adding the TopMenu
-		TopMenu topMenu = new TopMenu();
+		TopMenu topMenu = new TopMenu("File", "Edit", "Insert");
 		setJMenuBar(topMenu);
 
 		// add new set of quadrants
