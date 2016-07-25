@@ -17,11 +17,14 @@ import javax.swing.JScrollPane;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.FileNotFoundException;
 
 class Quadrant extends JPanel{
     // ----- CLASS DECLARATIONS -----
     private static JTextArea qArray[] = new JTextArea[4];
+    private static String userHome = System.getProperty("user.home"); // retrieving current user's home dir
 
     // ----- CONSTRUCTOR -----
     public Quadrant(){
@@ -88,9 +91,7 @@ class Quadrant extends JPanel{
     // ---- method to write text to a file
     public static void writeToFile(){
 
-        // retrieving current user's home dir
-        String userHome = System.getProperty("user.home");
-
+        // for loop to save contents of each quadrant in a separate file
         for(int count = 0; count < 4; count++){
             try{
                 File file = new File(userHome + "/quad/quad" + count + ".txt");
@@ -100,6 +101,16 @@ class Quadrant extends JPanel{
                 out.write(qArray[count].getText());
                 out.close();
             }catch (IOException e){}
-        }
+        } // end of for loop
     } // end of writeToFile() method
+
+    public static void readFromFile(){
+
+        for(int count = 0; count < 4; count++){
+            try{
+                FileReader reader = new FileReader(userHome + "/quad/quad" + count + ".txt");
+                qArray[count].read(reader, userHome + "/quad/quad" + count + ".txt");
+            }catch (IOException e){}
+        } // end of for loop
+    } // end of readFromFile() method
 }

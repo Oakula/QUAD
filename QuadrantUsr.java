@@ -14,6 +14,9 @@ public class QuadrantUsr {
 
     // ----- MAIN METHOD
     public static void main(String[] args){
+        // setting to use native macOS menu bar
+        System.setProperty("apple.laf.useScreenMenuBar", "true");
+
         MainFrame mFrame = new MainFrame();
     } // end of main() method
 }

@@ -75,5 +75,8 @@ class TopMenu extends JMenuBar implements ActionListener {
         if (src == menuItem[0])
             Quadrant.writeToFile();
 
+        if (src == menuItem[1])
+            Quadrant.readFromFile();
+
     } // end of actionPerformed() method
 }
