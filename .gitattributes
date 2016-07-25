@@ -1,0 +1,6 @@
+pkg/linux/quad-0.1.deb filter=lfs diff=lfs merge=lfs -text
+pkg/linux/quad-0.2.deb filter=lfs diff=lfs merge=lfs -text
+pkg/macosx/quad-0.1.dmg filter=lfs diff=lfs merge=lfs -text
+pkg/macosx/quad-0.2.dmg filter=lfs diff=lfs merge=lfs -text
+pkg/windows/quad-0.1.exe filter=lfs diff=lfs merge=lfs -text
+pkg/windows/quad-0.2.exe filter=lfs diff=lfs merge=lfs -text
