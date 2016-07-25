@@ -1,55 +1,79 @@
-
 /*
-	Classname: QuadrantUsr
-	Author: Callum Warrilow
-	Desc: Class to implement menu bar with save, undo, redo and open functions
+    Classname: QuadrantUsr
+    Author: Callum Warrilow
+    Desc: Class to implement menu bar with save, undo, redo and open functions
 */
 
 // ----- IMPORT STATEMENTS -----
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-class TopMenu extends JMenuBar {
+class TopMenu extends JMenuBar implements ActionListener {
+    // ----- CLASS DECLARATIONS -----
+    private JMenuItem menuItem[] = new JMenuItem[6];
 
-	// ----- CONSTRUCTOR -----
-	public TopMenu(String title1, String title2, String title3){
-		super();
-		String menuTitle[] = {title1, title2, title3};
+    // ----- CONSTRUCTOR -----
+    public TopMenu(String title1, String title2, String title3){
+        super();
+        String menuTitle[] = {title1, title2, title3};
 
-		// --- for loop to create three dropdown menus
-		for(int count = 0; count < 3; count++){
-			add(createMenu(menuTitle[count]));
-		} // end of for loop
-	} // end of CONSTRUCTOR
+        createMenuItem();
 
-	// ---- method to create JMenus
-	private JMenu createMenu(String title){
-		JMenu menu = new JMenu(title);
+        // --- for loop to create three dropdown menus
+        for(int count = 0; count < 3; count++){
+            add(createMenu(menuTitle[count]));
+        } // end of for loop
+    } // end of CONSTRUCTOR
 
-		// menu items for File
-		JMenuItem itemSave = new JMenuItem("Save");
-		JMenuItem itemOpen = new JMenuItem("Open");
+    // ---- method to create JMenus
+    private JMenu createMenu(String title){
+        JMenu menu = new JMenu(title);
 
-		// menu items for Edit
-		JMenuItem itemUndo = new JMenuItem("Undo");
-		JMenuItem itemRedo = new JMenuItem("Redo");
+        if(title == "File"){
+            menu.add(menuItem[0]);
+            menu.add(menuItem[1]);
+        }else if(title == "Edit"){
+            menu.add(menuItem[2]);
+            menu.add(menuItem[3]);
+        }else{
+            menu.add(menuItem[4]);
+            menu.add(menuItem[5]);
+        } // end of if statement
 
-		// menu items for Insert
-		JMenuItem itemBullet = new JMenuItem("Bullet Point");
-		JMenuItem itemArrow = new JMenuItem("Arrow");
+        for(int num = 0; num < 6; num++)
+            menuItem[num].addActionListener(this);
 
-		if(title == "File"){
-			menu.add(itemSave);
-			menu.add(itemOpen);
-		}else if(title == "Edit"){
-			menu.add(itemUndo);
-			menu.add(itemRedo);
-		}else{
-			menu.add(itemBullet);
-			menu.add(itemArrow);
-		} // end of if statement
+        return menu;
+    } // end of createMenu() method
 
-		return menu;
-	} // end of createMenu() method
+    private void createMenuItem(){
+
+        // menu items for File
+        menuItem[0] = new JMenuItem("Save");
+        menuItem[1] = new JMenuItem("Open");
+
+        // // menu items for Edit
+        menuItem[2] = new JMenuItem("Undo");
+        menuItem[3] = new JMenuItem("Redo");
+
+        // // menu items for Insert
+        menuItem[4] = new JMenuItem("Bullet Point");
+        menuItem[5] = new JMenuItem("Arrow");
+    } // end of createMenuItem() method
+
+    // ----------------------------
+    // EVENT HANDLING
+    // ----------------------------
+
+    public void actionPerformed(ActionEvent e){
+        Object src = e.getSource();
+
+        if (src == menuItem[0])
+            Quadrant.writeToFile();
+
+    } // end of actionPerformed() method
 }

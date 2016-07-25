@@ -25,7 +25,6 @@ class MainFrame extends JFrame {
 		setLayout(new GridBagLayout());
 
 		buildGUI();
-		styleGUI();
 		setVisible(true);
 	} // end of CONSTRUCTOR
 
@@ -65,26 +64,4 @@ class MainFrame extends JFrame {
 		add(vLabel, vLabelC);
 	} // end of buildGUI() method
 
-	// ---- method to style GUI based around the OS
-    private void styleGUI(){
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        }
-        catch (ClassNotFoundException e) {
-            // handle exception
-            e.printStackTrace();
-        }
-        catch (InstantiationException e) {
-            // handle exception
-            e.printStackTrace();
-        }
-        catch (IllegalAccessException e){
-            // handle exception
-            e.printStackTrace();
-        }
-        catch (UnsupportedLookAndFeelException e){
-            // handle exception
-            e.printStackTrace();
-        }
-    } // end of styleGUI() method
 }
