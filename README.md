@@ -4,7 +4,7 @@
 
 ## Aims
 
-* Follow the [UNIX](en.wikipedia.org/wiki/Unix_philosophy) philosophy
+* Demonstrate clean and well commented code
 * Create a way to use **quadrant time management** that is easy to
   manage and does not require thousands of pieces of paper
 * Provide myself with experience in managing my own projects
@@ -18,6 +18,11 @@ install and run version is released officially.**
 
 Therefore, I encourage feedback on my project and any contributions are
 welcome but attempting to run QUAD currently is not recommended.
+
+## Features to add
+* Keyboard shortcuts for saving and opening quadrant states
+* Auto-save and loading of quadrant states
+* Cleaner GUI (reduced window size)
 
 ## Thank you for checking out QUAD!
 
