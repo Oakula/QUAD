@@ -2,7 +2,7 @@
 
 ## QUAD is a productivity app written in Java that takes the methodology behind Stephen R. Covey's '7 Habits of Highly Effective People' and allows the user to organise their day/week in a small, lightweight app.
 
-<img src="images/quadImg.png" width="100" height="100" />
+<img src="images/quadImg.png" width="250" height="250" />
 
 ## Aims
 
