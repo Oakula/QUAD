@@ -19,12 +19,12 @@ class QuadLabel extends JPanel {
 
 		// set layout manager
 		if(vertical == true){
-			size.width = 50;
-			size.height = 400;
+			size.width = 40;
+			size.height = 300;
 			setLayout(new GridLayout(2,1,30,30));
 		}else{
-			size.width = 400;
-			size.height = 50;
+			size.width = 300;
+			size.height = 30;
 			setLayout(new GridLayout(1,2,30,30));
 		} // end of if statement
 

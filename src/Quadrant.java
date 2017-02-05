@@ -22,9 +22,11 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 
 class Quadrant extends JPanel{
+
     // ----- CLASS DECLARATIONS -----
     private static JTextArea qArray[] = new JTextArea[4];
-    private static String userHome = System.getProperty("user.home"); // retrieving current user's home dir
+    // retrieving current user's home dir
+    private static String userHome = System.getProperty("user.home");
 
     // ----- CONSTRUCTOR -----
     public Quadrant(){
@@ -94,7 +96,7 @@ class Quadrant extends JPanel{
         // for loop to save contents of each quadrant in a separate file
         for(int count = 0; count < 4; count++){
             try{
-                File file = new File(userHome + "/quad/quad" + count + ".txt");
+                File file = new File(userHome + "/.quad/quad" + count + ".txt");
                 file.getParentFile().mkdirs();
                 BufferedWriter out = new BufferedWriter(new FileWriter(file));
 
@@ -108,8 +110,8 @@ class Quadrant extends JPanel{
 
         for(int count = 0; count < 4; count++){
             try{
-                FileReader reader = new FileReader(userHome + "/quad/quad" + count + ".txt");
-                qArray[count].read(reader, userHome + "/quad/quad" + count + ".txt");
+                FileReader reader = new FileReader(userHome + "/.quad/quad" + count + ".txt");
+                qArray[count].read(reader, userHome + "/.quad/quad" + count + ".txt");
             }catch (IOException e){}
         } // end of for loop
     } // end of readFromFile() method
